@@ -104,14 +104,20 @@ if selected2 == "Map":
     fig.update_traces(
         marker=dict(opacity=1)
     )
-
-    if 'quiescent' in multi or 'potentially active' in multi:
-        fig.update_layout(
+    try:
+        if 'quiescent' in multi or 'potentially active' in multi:
+            fig.update_layout(
+                mapbox_style="carto-positron",
+                mapbox_zoom=1, 
+                mapbox_center={"lat": filtered_df[filtered_df['Active State']==multi[len(multi)-1]]['Latitude'].iloc[0], "lon": filtered_df[filtered_df['Active State']==multi[len(multi)-1]]['Longitude'].iloc[0]},
+            )
+        else:
+            fig.update_layout(
             mapbox_style="carto-positron",
             mapbox_zoom=1, 
-            mapbox_center={"lat": filtered_df[filtered_df['Active State']==multi[len(multi)-1]]['Latitude'].iloc[0], "lon": filtered_df[filtered_df['Active State']==multi[len(multi)-1]]['Longitude'].iloc[0]},
-        )
-    else:
+            mapbox_center={"lat": 20, "lon": 0},
+            )
+    except:
         fig.update_layout(
         mapbox_style="carto-positron",
         mapbox_zoom=1, 
