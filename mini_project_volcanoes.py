@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_theme import st_theme
 from streamlit_option_menu import option_menu
 import pandas as pd
 import matplotlib.pyplot as plt
