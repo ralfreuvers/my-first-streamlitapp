@@ -55,7 +55,6 @@ if selected2 == "Map":
 
     # Hide non-active volcanoes
     if left_column.checkbox("Show only active volcanoes"):
-        left_column, middle_column, right_column = st.columns([1,1,2])
         filtered_df = df[df['Active State'] == 'active']
         filtered_df['Active State'] = filtered_df['Last Known']
         color_mapping = {
