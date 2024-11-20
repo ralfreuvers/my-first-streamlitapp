@@ -29,6 +29,8 @@ selected2 = option_menu(None, ["Home", "Map", "Warning", 'Contact'],
 
 if selected2 == "Home":
     st.title("Home")
+    st.text("Welcome to my first Streamlit app. It's about volcanoes.")
+    st.image('Giant-Volcano-Eruption-Mountains.webp')
 
 
 if selected2 == "Map":
@@ -148,6 +150,8 @@ if selected2 == "Warning":
 
 if selected2 == "Contact":
     st.title("Contact")
+    st.text("E-mail:")
+    st.text("Telephone nr:")
 
 
 # CODE
